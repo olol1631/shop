@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Магазин обуви</title>
+	<link rel="shortcut icon" type="image/png" href="images/favicon.png">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/jquery.fancybox.min.css">
+	<link rel="stylesheet" href="css/swiper-bundle.min.css" />
+	<link rel="stylesheet" href="css/all.css">
+	<link rel="stylesheet" href="css/animate.min.css">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.min.css">
+</head>
+<body>
+	<div class="wrapper">
+		<div id="top">
+			<a  class="link-top" href="#top" title="Перейти вверх"></a>
+		</div>
+		<header class="header" >
+			<div  class="container">
+				<div class="header__top">
+					<div class="header__top-contact">
+						<i class="fas fa-phone-alt"></i>
+						<a href="tel:+375333231223" class="header__tel" title="Контактный телефон"> +37533 323-12-23</a>
+					</div>
+					<div class="header__top-user">
+						<a data-fancybox data-src="#signup-modal" href="javascript:;" class="header__signup btn btn-primary" title="Зарегистрироваться">Регистрация</a>
+						<div style="display: none;" id="signup-modal" class="header__signup-modal">
+							<form action="http://fe.it-academy.by/TestForm.php" method="GET">
+								<h5>Регистрация</h5>
+								<input type="email" name="email" placeholder="E-mail" required>
+								<input type="password" name="password" placeholder="Придумайте пароль" required>
+								<input type="password" name="password" placeholder="Повторите пароль" required>
+								<button class="modal-btn"  type="submit">Зарегистрироваться</button>
+							</form>
+						</div>
+						<a data-fancybox data-src="#signin-modal" href="javascript:;" class="header__signin btn btn-primary" title="Войти в личный кабинет">Войти</a>
+						<div style="display: none;" id="signin-modal" class="header__signup-modal">
+							<form action="http://fe.it-academy.by/TestForm.php" method="GET">
+								<h5>Вход</h5>
+								<input type="email" name="email" placeholder="E-mail" required>
+								<input type="password" name="password" placeholder="Пароль" required>
+								<button class="modal-btn"  type="submit">Войти в личный кабинет</button>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="header__bottom">
+					<div class="menu-burger">
+						<span></span>
+					</div>
+					<a  href="index.html" class="logo" title="Магазин обуви">
+						<img src="images/logo.svg" alt="logo" title="Главная страница">
+					</a>
+					<a data-fancybox data-src="#search-modal" href="javascript:;" class="header__bottom-searchmobile" title="Поиск">
+						<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd"
+								d="M14.325 12.899L19.705 18.279C19.8941 18.4682 20.0003 18.7248 20.0002 18.9924C20.0001 19.2599 19.8937 19.5164 19.7045 19.7055C19.5153 19.8946 19.2587 20.0008 18.9912 20.0007C18.7236 20.0006 18.4671 19.8942 18.278 19.705L12.898 14.325C11.2897 15.5707 9.26729 16.1569 7.24214 15.9644C5.21699 15.7718 3.34124 14.815 1.99649 13.2886C0.651744 11.7622 -0.0609975 9.78081 0.0032639 7.74755C0.0675253 5.71428 0.903963 3.78186 2.34242 2.34341C3.78087 0.904951 5.71329 0.0685133 7.74656 0.00425191C9.77982 -0.0600095 11.7612 0.652732 13.2876 1.99748C14.814 3.34223 15.7708 5.21798 15.9634 7.24313C16.1559 9.26828 15.5697 11.2907 14.324 12.899H14.325ZM8.00001 14C9.59131 14 11.1174 13.3679 12.2427 12.2426C13.3679 11.1174 14 9.5913 14 8C14 6.4087 13.3679 4.88258 12.2427 3.75736C11.1174 2.63214 9.59131 2 8.00001 2C6.40871 2 4.88259 2.63214 3.75737 3.75736C2.63215 4.88258 2.00001 6.4087 2.00001 8C2.00001 9.5913 2.63215 11.1174 3.75737 12.2426C4.88259 13.3679 6.40871 14 8.00001 14V14Z" />
+						</svg>
+					</a>
+					<form id="search-modal" class="search-modal" action="http://fe.it-academy.by/TestForm.php" method="GET">
+						<input class="header__bottom-search" type="search" name="search" placeholder="Поиск">
+						<button class="header__bottom-btn" type="submit"></button>
+					</form>
+					<form class="header__bottom-form" action="http://fe.it-academy.by/TestForm.php" method="GET">
+						<input class="header__bottom-search" type="search" name="search" placeholder="Поиск">
+						<button class="header__bottom-btn" type="submit"></button>
+					</form>
+					
+					<a class="header__bottom-fav" href="#" title="Избранное">
+						<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M14.4219 4.43125C14.2124 3.94631 13.9104 3.50686 13.5328 3.1375C13.1549 2.76704 12.7093 2.47264 12.2203 2.27031C11.7132 2.05968 11.1694 1.95186 10.6203 1.95313C9.85 1.95313 9.09844 2.16406 8.44531 2.5625C8.28906 2.65781 8.14062 2.7625 8 2.87656C7.85938 2.7625 7.71094 2.65781 7.55469 2.5625C6.90156 2.16406 6.15 1.95313 5.37969 1.95313C4.825 1.95313 4.2875 2.05938 3.77969 2.27031C3.28906 2.47344 2.84687 2.76563 2.46719 3.1375C2.08906 3.50644 1.787 3.946 1.57812 4.43125C1.36094 4.93594 1.25 5.47188 1.25 6.02344C1.25 6.54375 1.35625 7.08594 1.56719 7.6375C1.74375 8.09844 1.99687 8.57656 2.32031 9.05937C2.83281 9.82344 3.5375 10.6203 4.4125 11.4281C5.8625 12.7672 7.29844 13.6922 7.35938 13.7297L7.72969 13.9672C7.89375 14.0719 8.10469 14.0719 8.26875 13.9672L8.63906 13.7297C8.7 13.6906 10.1344 12.7672 11.5859 11.4281C12.4609 10.6203 13.1656 9.82344 13.6781 9.05937C14.0016 8.57656 14.2562 8.09844 14.4312 7.6375C14.6422 7.08594 14.7484 6.54375 14.7484 6.02344C14.75 5.47188 14.6391 4.93594 14.4219 4.43125V4.43125ZM8 12.7313C8 12.7313 2.4375 9.16719 2.4375 6.02344C2.4375 4.43125 3.75469 3.14062 5.37969 3.14062C6.52187 3.14062 7.5125 3.77812 8 4.70937C8.4875 3.77812 9.47813 3.14062 10.6203 3.14062C12.2453 3.14062 13.5625 4.43125 13.5625 6.02344C13.5625 9.16719 8 12.7313 8 12.7313Z"
+								fill-opacity="0.9" />
+						</svg>
+						<span>0</span>
+					</a>
+					<a class="header__bottom-cart" href="#" title="Корзина">
+						<svg width="94" height="78" viewBox="0 0 94 78" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M3 3H11.8457C15.4739 3 18.6478 5.44166 19.5782 8.94852L28.8776 44M77 57H40.5658C38.8785 57 37.2143 56.6071 35.7051 55.8525V55.8525C33.3377 54.6689 31.5542 52.5724 30.7653 50.0459L28.8776 44M28.8776 44H72.5032C75.2428 44 77.7306 42.4019 78.8696 39.9103L91.0584 13.2473C91.9667 11.2604 90.5146 9 88.33 9H28.8776"
+								stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+							<circle cx="74.5" cy="69.5" r="6" stroke-width="6" />
+							<circle cx="39.5" cy="69.5" r="6" stroke-width="6" />
+						</svg>
+						<span>0</span>
+					</a>
+				</div>				
+				<nav class="menu">
+					<ul class="menu__list">
+						<li>
+							<a href="zhenskaya-obuv.html" class="menu__link" title="Женская обувь">Женская обувь</a>
+						</li>
+						<li>
+							<a href="#" class="menu__link" title="Мужская обувь">Мужская обувь</a>
+						</li>
+						<li>
+							<a href="#" class="menu__link" title="Аксессуары">Аксессуары</a>
+						</li>
+						<li>
+							<a href="#" class="menu__link" title="Акции">Акции</a>
+						</li>
+						<li>
+							<a href="news.html" class="menu__link" title="Новости">Новости</a>
+						</li>
+						<li>
+							<a href="contacts.html" class="menu__link" title="Контакты">Контакты</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<div class="page wow animate__animated animate__fadeIn">
+			<div class="breadcrumbs">
+				<div class="container">
+					<ul class="breadcrumbs__list">
+						<li>
+							<a class="breadcrumbs_text" href="index.html">Главная</a>
+						</li>
+						<li class="active">Женская обувь</li>
+					</ul>
+				</div>	
+			</div>
+			<div class="product">
+				<div class="container">
+					<div class="product__inner">
+						<form action="http://fe.it-academy.by/TestForm.php" method="GET">
+							<aside class="product__filters">
+								<div class="product__filter-items">
+									<div class="product__filter">
+										<span class="product__filter-title">СЕЗОН</span>
+										<ul class="product__filter-body">
+											<li>
+												<label>
+													<input type="checkbox" name="season[]" value="summer">
+													Лето</label>
+											</li>
+											<li>
+												<label>
+													<input type="checkbox" name="season[]" value="demi-season">
+												Демисезон</label>
+											</li>
+											<li>
+												<label>
+													<input type="checkbox" name="season[]" value="eurozima">
+													Еврозима</label>
+											</li>
+											<li>
+												<label>
+													<input type="checkbox" name="season[]" value="winter">
+													Зима</label>
+											</li>
+										</ul>
+									</div>
+									<div class="product__filter">
+										<span class="product__filter-title">РАЗМЕР</span>
+										<ul class="product__filter-body">
+											<li>
+												<label>
+													<input type="checkbox" name="size[]" value="37">
+												37</label>
+											</li>
+											<li>
+												<label>
+													<input type="checkbox" name="size[]" value="38">
+												38</label>
+											</li>
+											<li>
+												<label>
+													<input type="checkbox" name="size[]" value="39">
+												39</label>
+											</li>
+											<li>
+												<label>
+													<input type="checkbox" name="size[]" value="40">
+												40</label>
+											</li>
+										</ul>
+									</div>
+									<div class="product__filter">
+										<span class="product__filter-title">КАТЕГОРИЯ</span>
+										<ul class="product__filter-body">
+											<li>
+												<label>
+												<input type="checkbox" name="category[]" value="sneakers">
+												Кроссовки</label>
+											</li>
+											<li>
+												<label>
+												<input type="checkbox" name="category[]" value="boots ">
+												Ботинки</label>
+											</li>
+											<li>
+												<label>
+												<input type="checkbox" name="category[]" value="shoes">
+												Туфли</label>
+											</li>
+											<li>
+												<label>
+												<input type="checkbox" name="category[]" value="boots2">
+												Сапоги</label>
+											</li>
+										</ul>
+									</div>
+	
+								</div>
+								<input class="product__filters-btn" type="submit" value="Применить фильтры">
+								<input class="product__filters-btn reset" type="reset" value="Сбросить фильтры">
+							</aside>
+						</form>
+						<div class="product__body">
+							<form class="product__body-sort">
+								<input type="radio" name="table-line" id="table" checked="">
+								<label class="icon-table active" for="table"><i class="fas fa-border-all"></i></label>
+								<input type="radio" name="table-line" id="line">
+								<label class="icon-line" for="line"><i class="fas fa-grip-lines"></i></label>
+							</form>
+							<div class="product__items">
+								<div class="product__item">
+									<div class="product__item-img">
+										<a href="card.html" title="Ботинки">
+											<img src="images/card-1.jpg" alt="Ботинки" title="Ботинки">
+										</a>
+										<div class="like">
+											<button>
+												<svg width="22" height="22" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path
+														d="M14.4219 4.43125C14.2124 3.94631 13.9104 3.50686 13.5328 3.1375C13.1549 2.76704 12.7093 2.47264 12.2203 2.27031C11.7132 2.05968 11.1694 1.95186 10.6203 1.95313C9.85 1.95313 9.09844 2.16406 8.44531 2.5625C8.28906 2.65781 8.14062 2.7625 8 2.87656C7.85938 2.7625 7.71094 2.65781 7.55469 2.5625C6.90156 2.16406 6.15 1.95313 5.37969 1.95313C4.825 1.95313 4.2875 2.05938 3.77969 2.27031C3.28906 2.47344 2.84687 2.76563 2.46719 3.1375C2.08906 3.50644 1.787 3.946 1.57812 4.43125C1.36094 4.93594 1.25 5.47188 1.25 6.02344C1.25 6.54375 1.35625 7.08594 1.56719 7.6375C1.74375 8.09844 1.99687 8.57656 2.32031 9.05937C2.83281 9.82344 3.5375 10.6203 4.4125 11.4281C5.8625 12.7672 7.29844 13.6922 7.35938 13.7297L7.72969 13.9672C7.89375 14.0719 8.10469 14.0719 8.26875 13.9672L8.63906 13.7297C8.7 13.6906 10.1344 12.7672 11.5859 11.4281C12.4609 10.6203 13.1656 9.82344 13.6781 9.05937C14.0016 8.57656 14.2562 8.09844 14.4312 7.6375C14.6422 7.08594 14.7484 6.54375 14.7484 6.02344C14.75 5.47188 14.6391 4.93594 14.4219 4.43125V4.43125ZM8 12.7313C8 12.7313 2.4375 9.16719 2.4375 6.02344C2.4375 4.43125 3.75469 3.14062 5.37969 3.14062C6.52187 3.14062 7.5125 3.77812 8 4.70937C8.4875 3.77812 9.47813 3.14062 10.6203 3.14062C12.2453 3.14062 13.5625 4.43125 13.5625 6.02344C13.5625 9.16719 8 12.7313 8 12.7313Z"
+														fill-opacity="0.9" />
+												</svg>
+											</button>
+										</div>
+									</div>
+									<div class="product__item-desc">
+										<p class="price">100 руб. <del>150 руб.</del></p>
+										<p><a class="title" href="card.html">Ботинки</a></p>
+										<div class="raiting">
+											<form action="http://fe.it-academy.by/TestForm.php" method="GET">
+												<input id="raiting-5" type="radio" name="raiting" value="5">
+												<label for="raiting-5"></label>
+												<input id="raiting-4" type="radio" name="raiting" value="4" checked>
+												<label for="raiting-4"></label>
+												<input id="raiting-3" type="radio" name="raiting" value="3">
+												<label for="raiting-3"></label>
+												<input id="raiting-2" type="radio" name="raiting" value="2">
+												<label for="raiting-2"></label>
+												<input id="raiting-1" type="radio" name="raiting" value="1">
+												<label for="raiting-1"></label>
+												<button type="submit"></button>
+											</form>
+										</div>
+									</div>
+								</div>
+								<div class="product__item">
+									<div class="product__item-img">
+										<a href="card.html" title="Ботинки">
+											<img src="images/card-2.jpg" alt="Ботинки" title="Ботинки">
+										</a>
+										<div class="like">
+											<button>
+												<svg width="22" height="22" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path
+														d="M14.4219 4.43125C14.2124 3.94631 13.9104 3.50686 13.5328 3.1375C13.1549 2.76704 12.7093 2.47264 12.2203 2.27031C11.7132 2.05968 11.1694 1.95186 10.6203 1.95313C9.85 1.95313 9.09844 2.16406 8.44531 2.5625C8.28906 2.65781 8.14062 2.7625 8 2.87656C7.85938 2.7625 7.71094 2.65781 7.55469 2.5625C6.90156 2.16406 6.15 1.95313 5.37969 1.95313C4.825 1.95313 4.2875 2.05938 3.77969 2.27031C3.28906 2.47344 2.84687 2.76563 2.46719 3.1375C2.08906 3.50644 1.787 3.946 1.57812 4.43125C1.36094 4.93594 1.25 5.47188 1.25 6.02344C1.25 6.54375 1.35625 7.08594 1.56719 7.6375C1.74375 8.09844 1.99687 8.57656 2.32031 9.05937C2.83281 9.82344 3.5375 10.6203 4.4125 11.4281C5.8625 12.7672 7.29844 13.6922 7.35938 13.7297L7.72969 13.9672C7.89375 14.0719 8.10469 14.0719 8.26875 13.9672L8.63906 13.7297C8.7 13.6906 10.1344 12.7672 11.5859 11.4281C12.4609 10.6203 13.1656 9.82344 13.6781 9.05937C14.0016 8.57656 14.2562 8.09844 14.4312 7.6375C14.6422 7.08594 14.7484 6.54375 14.7484 6.02344C14.75 5.47188 14.6391 4.93594 14.4219 4.43125V4.43125ZM8 12.7313C8 12.7313 2.4375 9.16719 2.4375 6.02344C2.4375 4.43125 3.75469 3.14062 5.37969 3.14062C6.52187 3.14062 7.5125 3.77812 8 4.70937C8.4875 3.77812 9.47813 3.14062 10.6203 3.14062C12.2453 3.14062 13.5625 4.43125 13.5625 6.02344C13.5625 9.16719 8 12.7313 8 12.7313Z"
+														fill-opacity="0.9" />
+												</svg>
+											</button>
+										</div>
+									</div>
+									<div class="product__item-desc">
+										<p class="price">140 руб. <del>170 руб.</del></p>
+										<p><a class="title" href="card.html">Ботинки</a></p>
+										<div class="raiting">
+											<form action="http://fe.it-academy.by/TestForm.php" method="GET">
+												<input id="raiting-52" type="radio" name="raiting" value="5" checked>
+												<label for="raiting-52"></label>
+												<input id="raiting-42" type="radio" name="raiting" value="4">
+												<label for="raiting-42"></label>
+												<input id="raiting-32" type="radio" name="raiting" value="3">
+												<label for="raiting-32"></label>
+												<input id="raiting-22" type="radio" name="raiting" value="2">
+												<label for="raiting-22"></label>
+												<input id="raiting-12" type="radio" name="raiting" value="1">
+												<label for="raiting-12"></label>
+												<button type="submit"></button>
+											</form>
+										</div>
+									</div>
+								</div>
+								<div class="product__item">
+									<div class="product__item-img">
+										<a href="card.html" title="Сапоги">
+											<img src="images/card-3.jpg" alt="Сапоги" title="Сапоги">
+										</a>
+										<div class="like">
+											<button>
+												<svg width="22" height="22" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path
+														d="M14.4219 4.43125C14.2124 3.94631 13.9104 3.50686 13.5328 3.1375C13.1549 2.76704 12.7093 2.47264 12.2203 2.27031C11.7132 2.05968 11.1694 1.95186 10.6203 1.95313C9.85 1.95313 9.09844 2.16406 8.44531 2.5625C8.28906 2.65781 8.14062 2.7625 8 2.87656C7.85938 2.7625 7.71094 2.65781 7.55469 2.5625C6.90156 2.16406 6.15 1.95313 5.37969 1.95313C4.825 1.95313 4.2875 2.05938 3.77969 2.27031C3.28906 2.47344 2.84687 2.76563 2.46719 3.1375C2.08906 3.50644 1.787 3.946 1.57812 4.43125C1.36094 4.93594 1.25 5.47188 1.25 6.02344C1.25 6.54375 1.35625 7.08594 1.56719 7.6375C1.74375 8.09844 1.99687 8.57656 2.32031 9.05937C2.83281 9.82344 3.5375 10.6203 4.4125 11.4281C5.8625 12.7672 7.29844 13.6922 7.35938 13.7297L7.72969 13.9672C7.89375 14.0719 8.10469 14.0719 8.26875 13.9672L8.63906 13.7297C8.7 13.6906 10.1344 12.7672 11.5859 11.4281C12.4609 10.6203 13.1656 9.82344 13.6781 9.05937C14.0016 8.57656 14.2562 8.09844 14.4312 7.6375C14.6422 7.08594 14.7484 6.54375 14.7484 6.02344C14.75 5.47188 14.6391 4.93594 14.4219 4.43125V4.43125ZM8 12.7313C8 12.7313 2.4375 9.16719 2.4375 6.02344C2.4375 4.43125 3.75469 3.14062 5.37969 3.14062C6.52187 3.14062 7.5125 3.77812 8 4.70937C8.4875 3.77812 9.47813 3.14062 10.6203 3.14062C12.2453 3.14062 13.5625 4.43125 13.5625 6.02344C13.5625 9.16719 8 12.7313 8 12.7313Z"
+														fill-opacity="0.9" />
+												</svg>
+											</button>
+										</div>
+									</div>
+									<div class="product__item-desc">
+										<p class="price">130 руб.</p>
+										<p><a class="title" href="card.html" title="Сапоги">Сапоги</a></p>
+										<div class="raiting">
+											<form action="http://fe.it-academy.by/TestForm.php" method="GET">
+												<input id="raiting-53" type="radio" name="raiting" value="5">
+												<label for="raiting-53"></label>
+												<input id="raiting-43" type="radio" name="raiting" value="4">
+												<label for="raiting-43"></label>
+												<input id="raiting-33" type="radio" name="raiting" value="3" checked>
+												<label for="raiting-33"></label>
+												<input id="raiting-23" type="radio" name="raiting" value="2">
+												<label for="raiting-23"></label>
+												<input id="raiting-13" type="radio" name="raiting" value="1">
+												<label for="raiting-13"></label>
+												<button type="submit"></button>
+											</form>
+										</div>
+									</div>
+								</div>
+								<div class="product__item">
+									<div class="product__item-img">
+										<a href="#" title="Кроссовки">
+											<img src="images/card-4.jpg" alt="Кроссовки" title="Кроссовки">
+										</a>
+										<div class="like">
+											<button>
+												<svg width="22" height="22" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path
+														d="M14.4219 4.43125C14.2124 3.94631 13.9104 3.50686 13.5328 3.1375C13.1549 2.76704 12.7093 2.47264 12.2203 2.27031C11.7132 2.05968 11.1694 1.95186 10.6203 1.95313C9.85 1.95313 9.09844 2.16406 8.44531 2.5625C8.28906 2.65781 8.14062 2.7625 8 2.87656C7.85938 2.7625 7.71094 2.65781 7.55469 2.5625C6.90156 2.16406 6.15 1.95313 5.37969 1.95313C4.825 1.95313 4.2875 2.05938 3.77969 2.27031C3.28906 2.47344 2.84687 2.76563 2.46719 3.1375C2.08906 3.50644 1.787 3.946 1.57812 4.43125C1.36094 4.93594 1.25 5.47188 1.25 6.02344C1.25 6.54375 1.35625 7.08594 1.56719 7.6375C1.74375 8.09844 1.99687 8.57656 2.32031 9.05937C2.83281 9.82344 3.5375 10.6203 4.4125 11.4281C5.8625 12.7672 7.29844 13.6922 7.35938 13.7297L7.72969 13.9672C7.89375 14.0719 8.10469 14.0719 8.26875 13.9672L8.63906 13.7297C8.7 13.6906 10.1344 12.7672 11.5859 11.4281C12.4609 10.6203 13.1656 9.82344 13.6781 9.05937C14.0016 8.57656 14.2562 8.09844 14.4312 7.6375C14.6422 7.08594 14.7484 6.54375 14.7484 6.02344C14.75 5.47188 14.6391 4.93594 14.4219 4.43125V4.43125ZM8 12.7313C8 12.7313 2.4375 9.16719 2.4375 6.02344C2.4375 4.43125 3.75469 3.14062 5.37969 3.14062C6.52187 3.14062 7.5125 3.77812 8 4.70937C8.4875 3.77812 9.47813 3.14062 10.6203 3.14062C12.2453 3.14062 13.5625 4.43125 13.5625 6.02344C13.5625 9.16719 8 12.7313 8 12.7313Z"
+														fill-opacity="0.9" />
+												</svg>
+											</button>
+										</div>
+									</div>
+									<div class="product__item-desc">
+										<p class="price">120 руб.</p>
+										<p><a class="title" href="#" title="Кроссовки">Кроссовки</a></p>
+										<div class="raiting">
+											<form action="http://fe.it-academy.by/TestForm.php" method="GET">
+												<input id="raiting-54" type="radio" name="raiting" value="5">
+												<label for="raiting-54"></label>
+												<input id="raiting-44" type="radio" name="raiting" value="4">
+												<label for="raiting-44"></label>
+												<input id="raiting-34" type="radio" name="raiting" value="3" checked>
+												<label for="raiting-34"></label>
+												<input id="raiting-24" type="radio" name="raiting" value="2">
+												<label for="raiting-24"></label>
+												<input id="raiting-14" type="radio" name="raiting" value="1">
+												<label for="raiting-14"></label>
+												<button type="submit"></button>
+											</form>
+										</div>
+									</div>
+								</div>
+								<div class="product__item">
+									<div class="product__item-img">
+										<a href="#" title="Кроссовки">
+											<img src="images/card-5.jpg" alt="Кроссовки" title="Кроссовки">
+										</a>
+										<div class="like">
+											<button>
+												<svg width="22" height="22" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path
+														d="M14.4219 4.43125C14.2124 3.94631 13.9104 3.50686 13.5328 3.1375C13.1549 2.76704 12.7093 2.47264 12.2203 2.27031C11.7132 2.05968 11.1694 1.95186 10.6203 1.95313C9.85 1.95313 9.09844 2.16406 8.44531 2.5625C8.28906 2.65781 8.14062 2.7625 8 2.87656C7.85938 2.7625 7.71094 2.65781 7.55469 2.5625C6.90156 2.16406 6.15 1.95313 5.37969 1.95313C4.825 1.95313 4.2875 2.05938 3.77969 2.27031C3.28906 2.47344 2.84687 2.76563 2.46719 3.1375C2.08906 3.50644 1.787 3.946 1.57812 4.43125C1.36094 4.93594 1.25 5.47188 1.25 6.02344C1.25 6.54375 1.35625 7.08594 1.56719 7.6375C1.74375 8.09844 1.99687 8.57656 2.32031 9.05937C2.83281 9.82344 3.5375 10.6203 4.4125 11.4281C5.8625 12.7672 7.29844 13.6922 7.35938 13.7297L7.72969 13.9672C7.89375 14.0719 8.10469 14.0719 8.26875 13.9672L8.63906 13.7297C8.7 13.6906 10.1344 12.7672 11.5859 11.4281C12.4609 10.6203 13.1656 9.82344 13.6781 9.05937C14.0016 8.57656 14.2562 8.09844 14.4312 7.6375C14.6422 7.08594 14.7484 6.54375 14.7484 6.02344C14.75 5.47188 14.6391 4.93594 14.4219 4.43125V4.43125ZM8 12.7313C8 12.7313 2.4375 9.16719 2.4375 6.02344C2.4375 4.43125 3.75469 3.14062 5.37969 3.14062C6.52187 3.14062 7.5125 3.77812 8 4.70937C8.4875 3.77812 9.47813 3.14062 10.6203 3.14062C12.2453 3.14062 13.5625 4.43125 13.5625 6.02344C13.5625 9.16719 8 12.7313 8 12.7313Z"
+														fill-opacity="0.9" />
+												</svg>
+											</button>
+										</div>
+									</div>
+									<div class="product__item-desc">
+										<p class="price">143 руб. <del>165 руб.</del></p>
+										<p><a class="title" href="#" title="Кроссовки">Кроссовки</a></p>
+										<div class="raiting">
+											<form action="http://fe.it-academy.by/TestForm.php" method="GET">
+												<input id="raiting-55" type="radio" name="raiting" value="5">
+												<label for="raiting-55"></label>
+												<input id="raiting-45" type="radio" name="raiting" value="4" checked>
+												<label for="raiting-45"></label>
+												<input id="raiting-35" type="radio" name="raiting" value="3">
+												<label for="raiting-35"></label>
+												<input id="raiting-25" type="radio" name="raiting" value="2">
+												<label for="raiting-25"></label>
+												<input id="raiting-15" type="radio" name="raiting" value="1">
+												<label for="raiting-15"></label>
+												<button type="submit"></button>
+											</form>
+										</div>
+									</div>
+								</div>
+								<div class="product__item">
+									<div class="product__item-img">
+										<a href="#" title="Туфли">
+											<img src="images/card-6.jpg" alt="Туфли" title="Туфли">
+										</a>
+										<div class="like">
+											<button>
+												<svg width="22" height="22" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path
+														d="M14.4219 4.43125C14.2124 3.94631 13.9104 3.50686 13.5328 3.1375C13.1549 2.76704 12.7093 2.47264 12.2203 2.27031C11.7132 2.05968 11.1694 1.95186 10.6203 1.95313C9.85 1.95313 9.09844 2.16406 8.44531 2.5625C8.28906 2.65781 8.14062 2.7625 8 2.87656C7.85938 2.7625 7.71094 2.65781 7.55469 2.5625C6.90156 2.16406 6.15 1.95313 5.37969 1.95313C4.825 1.95313 4.2875 2.05938 3.77969 2.27031C3.28906 2.47344 2.84687 2.76563 2.46719 3.1375C2.08906 3.50644 1.787 3.946 1.57812 4.43125C1.36094 4.93594 1.25 5.47188 1.25 6.02344C1.25 6.54375 1.35625 7.08594 1.56719 7.6375C1.74375 8.09844 1.99687 8.57656 2.32031 9.05937C2.83281 9.82344 3.5375 10.6203 4.4125 11.4281C5.8625 12.7672 7.29844 13.6922 7.35938 13.7297L7.72969 13.9672C7.89375 14.0719 8.10469 14.0719 8.26875 13.9672L8.63906 13.7297C8.7 13.6906 10.1344 12.7672 11.5859 11.4281C12.4609 10.6203 13.1656 9.82344 13.6781 9.05937C14.0016 8.57656 14.2562 8.09844 14.4312 7.6375C14.6422 7.08594 14.7484 6.54375 14.7484 6.02344C14.75 5.47188 14.6391 4.93594 14.4219 4.43125V4.43125ZM8 12.7313C8 12.7313 2.4375 9.16719 2.4375 6.02344C2.4375 4.43125 3.75469 3.14062 5.37969 3.14062C6.52187 3.14062 7.5125 3.77812 8 4.70937C8.4875 3.77812 9.47813 3.14062 10.6203 3.14062C12.2453 3.14062 13.5625 4.43125 13.5625 6.02344C13.5625 9.16719 8 12.7313 8 12.7313Z"
+														fill-opacity="0.9" />
+												</svg>
+											</button>
+										</div>
+									</div>
+									<div class="product__item-desc">
+										<p class="price">112 руб. <del>167 руб.</del></p>
+										<p><a class="title" href="#" title="Туфли">Туфли</a></p>
+										<div class="raiting">
+											<form action="http://fe.it-academy.by/TestForm.php" method="GET">
+												<input id="raiting-56" type="radio" name="raiting" value="5" checked>
+												<label for="raiting-56"></label>
+												<input id="raiting-46" type="radio" name="raiting" value="4">
+												<label for="raiting-46"></label>
+												<input id="raiting-36" type="radio" name="raiting" value="3">
+												<label for="raiting-36"></label>
+												<input id="raiting-26" type="radio" name="raiting" value="2">
+												<label for="raiting-26"></label>
+												<input id="raiting-16" type="radio" name="raiting" value="1">
+												<label for="raiting-16"></label>
+												<button type="submit"></button>
+											</form>
+										</div>
+									</div>
+								</div>
+								<div class="product__item">
+									<div class="product__item-img">
+										<a href="#" title="Ботинки">
+											<img src="images/card-7.jpg" alt="Ботинки" title="Ботинки">
+										</a>
+										<div class="like">
+											<button>
+												<svg width="22" height="22" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path
+														d="M14.4219 4.43125C14.2124 3.94631 13.9104 3.50686 13.5328 3.1375C13.1549 2.76704 12.7093 2.47264 12.2203 2.27031C11.7132 2.05968 11.1694 1.95186 10.6203 1.95313C9.85 1.95313 9.09844 2.16406 8.44531 2.5625C8.28906 2.65781 8.14062 2.7625 8 2.87656C7.85938 2.7625 7.71094 2.65781 7.55469 2.5625C6.90156 2.16406 6.15 1.95313 5.37969 1.95313C4.825 1.95313 4.2875 2.05938 3.77969 2.27031C3.28906 2.47344 2.84687 2.76563 2.46719 3.1375C2.08906 3.50644 1.787 3.946 1.57812 4.43125C1.36094 4.93594 1.25 5.47188 1.25 6.02344C1.25 6.54375 1.35625 7.08594 1.56719 7.6375C1.74375 8.09844 1.99687 8.57656 2.32031 9.05937C2.83281 9.82344 3.5375 10.6203 4.4125 11.4281C5.8625 12.7672 7.29844 13.6922 7.35938 13.7297L7.72969 13.9672C7.89375 14.0719 8.10469 14.0719 8.26875 13.9672L8.63906 13.7297C8.7 13.6906 10.1344 12.7672 11.5859 11.4281C12.4609 10.6203 13.1656 9.82344 13.6781 9.05937C14.0016 8.57656 14.2562 8.09844 14.4312 7.6375C14.6422 7.08594 14.7484 6.54375 14.7484 6.02344C14.75 5.47188 14.6391 4.93594 14.4219 4.43125V4.43125ZM8 12.7313C8 12.7313 2.4375 9.16719 2.4375 6.02344C2.4375 4.43125 3.75469 3.14062 5.37969 3.14062C6.52187 3.14062 7.5125 3.77812 8 4.70937C8.4875 3.77812 9.47813 3.14062 10.6203 3.14062C12.2453 3.14062 13.5625 4.43125 13.5625 6.02344C13.5625 9.16719 8 12.7313 8 12.7313Z"
+														fill-opacity="0.9" />
+												</svg>
+											</button>
+										</div>
+									</div>
+									<div class="product__item-desc">
+										<p class="price">155 руб. <del>180 руб.</del></p>
+										<p><a class="title" href="#" title="Ботинки">Ботинки</a></p>
+										<div class="raiting">
+											<form action="http://fe.it-academy.by/TestForm.php" method="GET">
+												<input id="raiting-57" type="radio" name="raiting" value="5" checked>
+												<label for="raiting-57"></label>
+												<input id="raiting-47" type="radio" name="raiting" value="4">
+												<label for="raiting-47"></label>
+												<input id="raiting-37" type="radio" name="raiting" value="3">
+												<label for="raiting-37"></label>
+												<input id="raiting-27" type="radio" name="raiting" value="2">
+												<label for="raiting-27"></label>
+												<input id="raiting-17" type="radio" name="raiting" value="1">
+												<label for="raiting-17"></label>
+												<button type="submit"></button>
+											</form>
+										</div>
+									</div>
+								</div>
+								<div class="product__item">
+									<div class="product__item-img">
+										<a href="#" title="Туфли">
+											<img src="images/card-8.jpg" alt="Туфли" title="Туфли">
+										</a>
+										<div class="like">
+											<button lass="like">
+												<svg width="22" height="22" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path
+														d="M14.4219 4.43125C14.2124 3.94631 13.9104 3.50686 13.5328 3.1375C13.1549 2.76704 12.7093 2.47264 12.2203 2.27031C11.7132 2.05968 11.1694 1.95186 10.6203 1.95313C9.85 1.95313 9.09844 2.16406 8.44531 2.5625C8.28906 2.65781 8.14062 2.7625 8 2.87656C7.85938 2.7625 7.71094 2.65781 7.55469 2.5625C6.90156 2.16406 6.15 1.95313 5.37969 1.95313C4.825 1.95313 4.2875 2.05938 3.77969 2.27031C3.28906 2.47344 2.84687 2.76563 2.46719 3.1375C2.08906 3.50644 1.787 3.946 1.57812 4.43125C1.36094 4.93594 1.25 5.47188 1.25 6.02344C1.25 6.54375 1.35625 7.08594 1.56719 7.6375C1.74375 8.09844 1.99687 8.57656 2.32031 9.05937C2.83281 9.82344 3.5375 10.6203 4.4125 11.4281C5.8625 12.7672 7.29844 13.6922 7.35938 13.7297L7.72969 13.9672C7.89375 14.0719 8.10469 14.0719 8.26875 13.9672L8.63906 13.7297C8.7 13.6906 10.1344 12.7672 11.5859 11.4281C12.4609 10.6203 13.1656 9.82344 13.6781 9.05937C14.0016 8.57656 14.2562 8.09844 14.4312 7.6375C14.6422 7.08594 14.7484 6.54375 14.7484 6.02344C14.75 5.47188 14.6391 4.93594 14.4219 4.43125V4.43125ZM8 12.7313C8 12.7313 2.4375 9.16719 2.4375 6.02344C2.4375 4.43125 3.75469 3.14062 5.37969 3.14062C6.52187 3.14062 7.5125 3.77812 8 4.70937C8.4875 3.77812 9.47813 3.14062 10.6203 3.14062C12.2453 3.14062 13.5625 4.43125 13.5625 6.02344C13.5625 9.16719 8 12.7313 8 12.7313Z"
+														fill-opacity="0.9" />
+												</svg>
+											</button>
+										</div>
+									</div>
+									<div class="product__item-desc">
+										<p class="price">140 руб.</p>
+										<p><a class="title" href="#" title="Туфли">Туфли</a></p>
+										<div class="raiting">
+											<form action="http://fe.it-academy.by/TestForm.php" method="GET">
+												<input id="raiting-58" type="radio" name="raiting" value="5">
+												<label for="raiting-58"></label>
+												<input id="raiting-48" type="radio" name="raiting" value="4" checked>
+												<label for="raiting-48"></label>
+												<input id="raiting-38" type="radio" name="raiting" value="3">
+												<label for="raiting-38"></label>
+												<input id="raiting-28" type="radio" name="raiting" value="2">
+												<label for="raiting-28"></label>
+												<input id="raiting-18" type="radio" name="raiting" value="1">
+												<label for="raiting-18"></label>
+												<button type="submit"></button>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+							<ul class="pagination">
+								<li>
+									<a href="#" class="prev"></a>
+								</li>
+								<li>
+									<a href="#" class="current">1</a>
+								</li>
+								<li>
+									<a href="#">2</a>
+								</li>
+								<li>
+									<a href="#">3</a>
+								</li>
+								<li>
+									<a href="#" class="next"></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+	
+				</div>
+			</div>
+
+		</div>
+		<footer class="footer">
+			<div class="container">
+				<div class="footer__inner">
+					<div class="footer__item footer__item_social">
+						<div class="footer__logo">
+							<a  href="index.html" class="logo">
+								<img src="images/logo_footer.svg" alt="logo" title="Главная страница"></a>
+						</div>
+						<h5 class="footer__title">Свяжитесь с нами</h5>
+						<ul class="social__list">
+							<li>
+								<a href="#"><i class="fab fa-facebook-f" title="Наш аккаунт в Facebook"></i></a>
+							</li>
+							<li>
+								<a href="#"><i class="fab fa-vk" title="Наш аккаунт в Вконтакте"></i></a>
+							</li>
+							<li>
+								<a href="#"><i class="fab fa-instagram" title="Наш аккаунт в Instagram"></i></a>
+							</li>
+						</ul>
+					</div>
+					<div class="footer__item">
+						<h5 class="footer__title">КАТАЛОГ</h5>
+						<ul class="footer__list">
+							<li>
+								<a href="zhenskaya-obuv.html" title="Женская обувь"> Женская обувь</a>
+							</li>
+							<li>
+								<a href="#" title="Мужская обувь">Мужская обувь</a>
+							</li>
+							<li>
+								<a href="#" title="Аксессуары">Аксессуары</a>
+							</li>
+						</ul>
+					</div>
+					<div class="footer__item">
+						<h5 class="footer__title">ПОКУПАТЕЛЯМ</h5>
+						<ul class="footer__list">
+							<li>
+								<a href="#" title="Магазины">Магазины</a>
+							</li>
+							<li>
+								<a href="#" title="Доставка">Доставка</a>
+							</li>
+							<li>
+								<a href="#" title="Оплата">Оплата</a>
+							</li>
+							<li>
+								<a href="news.html" title="Новости">Новости</a>
+							</li>
+						</ul>
+					</div>
+					<div class="footer__item footer__item_contacts">
+						<h5 class="footer__title">Контакты</h5>
+						<p>ООО "Обувь"</p>
+						<p>220011, Минск, пл.Свободы, 1</p>
+						<p>Режим работы интернет-магазина: <br> пн-пт 10:00-18:00, сб-вс выходной</p>
+						
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+
+
+
+	<script src="js/jquery-3.6.0.min.js"></script>
+	<script src="js/wow.min.js"></script>
+	<script src="js/jquery.fancybox.min.js"></script>
+	<script src="js/swiper-bundle.min.js"></script>
+	<script src="js/main.js"></script>
+
+</body>
+
+</html>
